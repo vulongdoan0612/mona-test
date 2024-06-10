@@ -127,14 +127,16 @@ const Header = ({ setSpin, setResult }: any) => {
   }, []);
 
   useEffect(() => {
+    console.log(getCart?.data?.cart);
     if (getCart?.data?.cart?.total_quantity !== undefined) {
-      setCartQuantity(getCart.data.cart.total_quantity);
+      setCartQuantity(getCart?.data?.cart?.total_quantity);
     }
   }, [getCart]);
 
   useEffect(() => {
+    console.log(cart.data?.addProductsToCart?.cart);
     if (cart?.data?.addProductsToCart?.cart?.total_quantity !== undefined) {
-      setCartQuantity(cart.data.addProductsToCart.cart.total_quantity);
+      setCartQuantity(cart?.data?.addProductsToCart?.cart?.total_quantity);
     }
   }, [cart]);
 
@@ -173,13 +175,13 @@ const Header = ({ setSpin, setResult }: any) => {
             <span className="text">Account</span> <DownOutlined />
           </div>
         </Dropdown>
-        <a href="/checkout">
+        <Link href="/checkout">
           <div className="cart">
             <Badge count={cartQuantity} offset={[4, -2]}>
               <Image src="/images/cart-img.svg" alt="" preview={false}></Image>
             </Badge>
           </div>
-        </a>
+        </Link>
       </div>
     </header>
   );

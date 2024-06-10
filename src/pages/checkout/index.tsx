@@ -1,5 +1,5 @@
 import Page from "@/layout/Page";
-import { getCartList } from "@/redux/reducers/cart";
+import { getCartList, resetCartState } from "@/redux/reducers/cart";
 import { AppDispatch, RootState } from "@/redux/store";
 import { fetchData } from "@/services/data";
 import { LeftOutlined } from "@ant-design/icons";
@@ -61,10 +61,11 @@ const Checkout = () => {
     };
     const res = await fetchData(postData);
     if (res.status === 200) {
+      dispatch(getCartList({ cartId, setSpin }));
       if (getCart?.data?.cart?.items?.length === 1) {
         localStorage.removeItem("cartId");
+        dispatch(resetCartState());
       }
-      dispatch(getCartList({ cartId, setSpin }));
     }
   };
 

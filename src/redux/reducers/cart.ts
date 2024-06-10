@@ -82,7 +82,13 @@ const initialState: IState = {
 const slicer = createSlice({
   name: "cart",
   initialState,
-  reducers: {},
+  reducers: {
+    resetCartState: (state) => {
+      state.cart = [];
+      state.getCart = [];
+    },
+  },
+
   extraReducers: (builder) => {
     builder.addCase(createCart.fulfilled, (state, action: any) => {
       state.cart = action.payload;
@@ -95,5 +101,6 @@ const slicer = createSlice({
     });
   },
 });
+export const { resetCartState } = slicer.actions;
 
 export default slicer.reducer;
