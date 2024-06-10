@@ -1,0 +1,119 @@
+@import "antd/dist/reset.css";
+
+@import "./pages/index.scss";
+@import "./components/index.scss";
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+}
+img {
+  object-fit: cover;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+.ant-dropdown {
+  .ant-dropdown-menu-item {
+    padding: 8px 12px !important;
+  }
+  .ant-dropdown-menu-item:hover {
+    background-color: #ffb100 !important;
+  }
+  .ant-dropdown-menu {
+    padding: 0px !important;
+  }
+}
+.ant-input-number {
+  .ant-input-number-handler-wrap {
+    opacity: 1;
+  }
+  .ant-input-number-handler:hover {
+    .ant-input-number-handler-down-inner,
+    .ant-input-number-handler-up-inner {
+      color: #ffb100 !important;
+    }
+  }
+}
+.ant-input-number-outlined {
+  border-color: silver !important;
+}
+.ant-input-number-outlined:focus-within {
+  box-shadow: none;
+}
+.add-modal {
+  .ant-modal-close {
+    display: none;
+  }
+  .ant-modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    .ant-image {
+      width: 55px;
+      height: 55px;
+    }
+    .description {
+      color: #28a745;
+      font-size: 16px;
+      margin: 10px 0px;
+      font-weight: 700;
+    }
+    button:first-child {
+      background: #eee !important;
+      color: #151515 !important;
+      transition: 0.5s all ease-in-out;
+      border-radius: 5px;
+      padding: 8px 20px !important;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    button:last-child {
+      background: #ffb100 !important;
+      color: #151515 !important;
+      transition: 0.5s all ease-in-out;
+      border-radius: 5px;
+      padding: 8px 20px !important;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    button:first-child:hover {
+      background: #ffb100 !important;
+    }
+  }
+}
